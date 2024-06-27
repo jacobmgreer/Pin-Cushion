@@ -1,0 +1,17 @@
+---
+layout: base
+---
+
+<h3 class="text-center display-3">{{ page.category }}: {{ page.tag }}</h1>
+<br/>
+{% assign pins = site.posts | where: "tag", page.tag %}
+
+<div class="images container">
+  {% for pin in pins %}
+      <figure class="figure">
+        <a href="{{ site.baseurl }}{{ pin.url }}" target="_blank">
+          <img width="100" class="figure-img img-fluid rounded" src="https://raw.githubusercontent.com/jacobmgreer/Pin-Cushion/main/assets/img/thumbs/{{ pin.name | remove: ".md" }}.png">
+        </a>
+      </figure>
+  {% endfor %}
+</div>
