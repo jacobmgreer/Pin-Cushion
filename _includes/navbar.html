@@ -1,0 +1,64 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <ul class="nav nav-pills lead">
+      <li class="nav-item">
+        <a href="https://jacobmgreer.github.io" title="go to homepage" class="nav-link" rel="noopener noreferrer"><i class="bi bi-record-circle-fill"></i></a>
+      </li>
+      <li class="nav-item">
+        <a href="https://www.instagram.com/jakeob" title="go to instagram" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
+      </li>
+      <li class="nav-item">
+        <a href="https://github.com/jacobmgreer" title="go to github" class="nav-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<nav class="navbar">
+  <div class="container-fluid">
+    <ul class="nav nav-pills lead">
+      <li class="nav-item">
+        <a href="https://jacobmgreer.github.io/NickelodeonAndDimed/" class="nav-link">Nickelodeon & Dimed</a>
+      </li>
+      <li class="nav-item">
+        <a href="https://jacobmgreer.github.io/Pin-Cushion/" style="color: #4C7399" class="nav-link">Pin-Cushion</a>
+      </li>
+      <li class="nav-item">
+        <a href="https://jacobmgreer.github.io/Great-Procreations/" class="nav-link">Great Procreations</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<section id="header">
+  <div class="justify-content-center container-fluid">
+      <h1 class="text-center display-1">Pin-Cushion</h1>
+      <h6 class="text-center display-6">folder-based, archivable cushion</h6>
+  </div>      
+</section>
+<nav class="navbar navbar-expand-lg nav2">
+  <div class="container-fluid">
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="justify-content-center collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        {% assign categories = site.categories | sort %}
+        
+        {% for category in categories %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ category | first }} ({{ category | last | size }})</a>
+            <ul class="dropdown-menu">
+              {% assign tags = site.posts | where: "category", category[0] | group_by: "tag" | sort: "size" | reverse %}
+              {% if tags != empty %}
+                {% for tag in tags %}
+                  <li><a class="dropdown-item" href="{{ site.baseurl }}/board/{{ category | first }}/{{ tag.name }}">{{ tag.name }} ({{ tag.size }})</a></li>
+                {% endfor %}
+              {% endif %}
+            </ul>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>

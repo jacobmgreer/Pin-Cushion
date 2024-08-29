@@ -1,0 +1,16 @@
+---
+layout: base
+---
+
+<h3 class="display-3 text-center">30 Most Recent</h1>
+<br/>
+
+<div class="images container">
+  {% for pin in site.posts limit:30 %}
+      <figure class="figure">
+        <a href="{{ site.baseurl }}{{ pin.url }}" target="_blank">
+          <img width="100" class="figure-img img-fluid rounded" src=" https://raw.githubusercontent.com/jacobmgreer/Pin-Cushion/main/assets/img/thumbs/{{ pin.name | remove: ".md" }}.png">
+        </a>
+      </figure>
+  {% endfor %}
+</div>

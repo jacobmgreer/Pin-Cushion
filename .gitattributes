@@ -1,0 +1,5 @@
+* linguist-vendored
+*.R linguist-vendored=false
+*.sh linguist-vendored=false
+*.html linguist-generated
+*.md linguist-generated

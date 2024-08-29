@@ -1,0 +1,21 @@
+---
+layout: base
+---
+
+<div class="card">
+  <div class="card-body">
+    <p class="card-text">
+      <script src="https://utteranc.es/client.js"
+        repo="jacobmgreer/Pin-Cushion"
+        issue-term="pathname"
+        label="pins"
+        theme="boxy-light"
+        crossorigin="anonymous"
+        async>
+      </script>
+    </p>
+    <p class="card-text"><small class="text-body-secondary">Added {{ page.date | date: "%b %d, %Y"}}</small></p>
+  </div>
+  <img src="https://raw.githubusercontent.com/jacobmgreer/Pin-Cushion/main/{{ page.image }}" class="card-img-bottom">
+</div>
+

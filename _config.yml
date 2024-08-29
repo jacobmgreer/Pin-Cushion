@@ -1,0 +1,25 @@
+title: 'Pin-Cushion'
+description: >
+  Pin-Cushion: a limitless, folder-based, archivable cushion for visual histories and iconographies.
+baseurl: ""
+
+permalink: /:year/:month/:day/:title:output_ext
+
+exclude:
+  - assets/
+  - boards/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .Rhistory
+  - .Rproj.user/
+  - .Rproj.user
+  - Pin-Cushion.Rproj
+  - README.md
