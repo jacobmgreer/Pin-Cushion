@@ -7,7 +7,7 @@ do
   rm $FILE
 done
 
-for FILE in $(find boards -mindepth 1 -maxdepth 3 -type f -not -path '*/.*' -not -path '*.md')
+for FILE in $(find boards -mindepth 1 -maxdepth 3 -type f -not -path '*/.*')
   do OFname=${${FILE##*/}%%.*}
 
 	if [[ ${#OFname} != 75 ]] then
@@ -18,7 +18,7 @@ for FILE in $(find boards -mindepth 1 -maxdepth 3 -type f -not -path '*/.*' -not
 	fi
 done
 
-for FILE in $(find boards -mindepth 1 -maxdepth 3 -type f -not -path '*/.*' -not -path '*.md') 
+for FILE in $(find boards -mindepth 1 -maxdepth 3 -type f -not -path '*/.*') 
 do
   if [ ! -f "assets/img/thumbs/$(echo ${${FILE##*/}%%.*}).png" ] 
     then qlmanage -t -o "assets/img/thumbs" -s 200 $FILE;
@@ -39,7 +39,7 @@ done
 rm -r _posts
 mkdir -p _posts
 
-for FILE in $(find boards -mindepth 1 -maxdepth 3 -type f -not -path '*/.*' -not -path '*.md' )
+for FILE in $(find boards -mindepth 1 -maxdepth 3 -type f -not -path '*/.*')
 
 do printf "---
 layout: pin
